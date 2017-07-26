@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="/robot-style.css">
+
+  </head>
+  <body>
+    <img src="{{avatar}}" alt="">
+    <h1>{{name}}</h1>
+    <p>{{#address}}{{#city}}{{city}}, {{/city}}{{country}} {{/address}} | {{#job}}{{company}}{{/job}} {{^job}}<span>Available for hire</span>{{/job}}</p>
+    <p>{{email}} | {{phone}}</p>
+    <table>
+      {{#university}}
+      <tr>
+        <th>Education</th>
+        <td>{{university}}</td>
+      </tr>
+      {{/university}}
+      <tr>
+        <th>Skills</th>
+        <td>{{skills}}</td>
+      </tr>
+    </table>
+  </body>
+</html>
