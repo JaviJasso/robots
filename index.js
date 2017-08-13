@@ -1,25 +1,21 @@
 const express = require("express")
 const mustacheExpress = require("mustache-express")
 const data = require("./data")
+const pgpPromise = require("pg-promise")
+const database = pgpPromise({database: "robot-database"})
+const bodyParser = require("body-parser")
+const expressValidator = require("express-validator")
 
 const app = express()
 
-// Use the middleware (i.e plugin) for static files
-// and tell express they are in the 'public' folder
 app.use(express.static("public"))
+app.use(bodyParser.urlenconded({ extended: false}))
+app.use(expressValidator())
 
 app.engine("mustache", mustacheExpress())
 app.set("views", "./templates")
 app.set("view engine", "mustache")
 
-// app.get is similar to our old friend addEventListener
-// except we are listening for requests from a
-// browser
-//
-// document.addEventListener('click', (event) => {
-//
-// })
-// Este abajo es mi HOME "app"
 app.get("/", (request, response) => {
   response.render("home", data)
 })
