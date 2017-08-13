@@ -10,4 +10,7 @@ li {
   text-align: center;
   width: 10em;
   height: 20em;
+  border-radius: 5px;
+  background: Dimgrey;
+  color: white;
 }

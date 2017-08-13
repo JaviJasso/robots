@@ -1,4 +1,4 @@
-module.exports = {
+const DATA = {
   users: [
     {
       id: 1,
@@ -1040,3 +1040,5 @@ module.exports = {
     }
   ]
 }
+
+export default DATA;
